@@ -1,0 +1,54 @@
+// version
+git -v
+
+
+git config --global user.name "ChengEnCai"
+git config --global user.email s40042488@gmail.com
+git config --global credential.helper store
+git config --global --list
+
+
+
+// 放入暫存區
+git add .
+git add *.txt
+
+
+// 丟入git
+git commit -m "git description"
+
+// 檢查狀態
+git status
+
+// 查看提交紀錄
+git log --oneline
+
+// 版本控制
+git reset --soft // 變動不大時，合併版本
+git reset --head // 放棄目前內容
+git reset --mixed // default
+
+
+// diff
+git diff // 默認是工作區與佔存區差異
+			diff --git a/file3.txt b/file3.txt
+			index 55bd0ac..f8d728c 100644 // 內容被做成hashtable + 權限
+			--- a/file3.txt				  // 
+			+++ b/file3.txt
+			@@ -1 +1 @@
+			-333						  // 刪除內容
+			+www						  // 新增內容
+
+
+git diff HEAD // 比較工作區與版本庫的不同
+
+git diff --cache // 比較占存區與版本庫的不同
+
+git diff HEAD~3 HEAD <fileName>
+
+git diff <branchName> <branchName>
+
+git rm <file> // 工作區與佔存區同時刪除
+git rm --cache <file>
+git rm -r *
+
