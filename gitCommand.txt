@@ -49,6 +49,42 @@ git diff HEAD~3 HEAD <fileName>
 git diff <branchName> <branchName>
 
 git rm <file> // 工作區與佔存區同時刪除
-git rm --cache <file>
+git rm --cached <file> 刪除版本庫
 git rm -r *
 
+
+.gitignore
+
+# 忽略所有.a文件
+*.a
+
+# 但追蹤lib.a文件
+!lib.a
+
+# 忽略當前目錄下TODO文件
+/TODO
+
+# 忽略任何目錄下build文件
+build/
+
+# 忽略 doc/note.txt，但不忽略doc/server.arch.txt
+doc/*.txt
+
+# 忽略 doc目錄底下所有 .pdf 文件
+doc/**/*.pdf
+
+
+// 生成 ssh  
+ssh-keygen -t rsa -b 4096
+		私鑰文件: id_rsa
+		公鑰文件: id_rsa.pub
+
+git clone repo-address
+git push <remote><branch>
+git pull <remote><branch>
+
+
+add local repo
+1. crate empty repo on github
+2. git remote add origin <address> // origin為remote repo的別名
+3. git push -u origin main:main // -u : upstream ; origin : remote別名 ; main:main : <remote branch:local branch>
